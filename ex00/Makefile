@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jeancarlen <jeancarlen@student.42.fr>      +#+  +:+       +#+         #
+#    By: jcarlen <jcarlen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 13:09:57 by fmalizia          #+#    #+#              #
-#    Updated: 2023/03/20 14:15:04 by jeancarlen       ###   ########.fr        #
+#    Updated: 2023/03/28 11:25:24 by jcarlen          ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = btc
 
-SRCS =	BitcoinExchange.cpp
+SRCS =	BitcoinExchange.cpp main.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 CXX  = g++

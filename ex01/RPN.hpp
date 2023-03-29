@@ -9,12 +9,10 @@
 
 class RPN
 {
-	private:
 	public:
-		std::stack<int> calcStack;
-		int get_data(char *input);
-		int PrintStack(std::stack<int> &calcStack);
-		void calcul(std::stack<int> &calcStack, char *input);
+		std::stack<double> calcStack;
+		int PrintStack(std::stack<double> &calcStack);
+		void calcul(std::stack<double> &calcStack, char *input);
 };
 int is_op(char op);
 

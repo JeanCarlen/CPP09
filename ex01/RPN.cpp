@@ -17,8 +17,14 @@ void RPN::calcul(std::stack<double> &calcStack, char *input)
 	int i, x, z;
 
 	i = 0;
+
 	while(input[i])
 	{
+		if(std::isspace(input[i]))
+		{
+			i++;
+			continue;
+		}
 		if(std::isdigit(input[i]))
 		{
 			this->calcStack.push(input[i] - '0');
@@ -26,13 +32,13 @@ void RPN::calcul(std::stack<double> &calcStack, char *input)
 			i++;
 			continue;
 		}
-		if(std::isspace(input[i]))
-		{
-			i++;
-			continue;
-		}
 		if(is_op(input[i]))
 		{
+			if (calcStack.size() < 2)
+			{
+				std::cout << "ERROR in calculation\n";
+				return;
+			}
 			//std::cout << "input is : " << input[i] << std::endl;
 			z = calcStack.top();
 			calcStack.pop();
@@ -53,7 +59,8 @@ void RPN::calcul(std::stack<double> &calcStack, char *input)
 		std::cout << "this signe is not known : " << input[i];
 		return;
 	}
-	std::cout << calcStack.top();
+	if(calcStack.size() > 0)
+		std::cout << calcStack.top();
 	std::cout << std::endl;
 }
 
